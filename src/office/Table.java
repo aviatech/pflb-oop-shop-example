@@ -1,11 +1,11 @@
 package office;
 
-import store.Storagable;
+import store.Storable;
 
 /**
  * Просто стол из офиса
  */
-public class Table implements Storagable {
+public class Table implements Storable {
 
     String color;
 
@@ -21,7 +21,7 @@ public class Table implements Storagable {
     }
 
     @Override
-    public void storage() {
+    public void store() {
         System.out.println("Я кладусь только ножками вверх.");
     }
 }

@@ -1,11 +1,11 @@
 package items;
 
-import store.Storagable;
+import store.Storable;
 
 /**
  * Абстрактный продающийся продукт
  */
-public abstract class Item implements Storagable {
+public abstract class Item implements Storable {
 
     private int price; // цена продажи
     private int purchasePrice; // цена покупки
@@ -13,6 +13,11 @@ public abstract class Item implements Storagable {
 
     public Item(String name, int price, int purchasePrice) {
         this.price = price;
+        this.purchasePrice = purchasePrice;
+        this.name = name;
+    }
+
+    public Item(String name, int purchasePrice) {
         this.purchasePrice = purchasePrice;
         this.name = name;
     }

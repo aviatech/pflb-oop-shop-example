@@ -15,7 +15,7 @@ public class Battery extends Item {
     }
 
     @Override
-    public void storage() {
+    public void store() {
         System.out.println("Я хранюсь пачками");
     }
 }

@@ -35,7 +35,7 @@ public class Camera extends Item {
     }
 
     @Override
-    public void storage() {
+    public void store() {
         System.out.println("Храни меня аккуратно!");
     }
 }
