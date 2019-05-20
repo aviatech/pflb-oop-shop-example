@@ -26,7 +26,6 @@ public class Shop {
         add(battery);
         add(table);
     }
-
     public static void add(Storagable storagableThing) {
         storagableThing.storage();
         System.out.println("Добавлен новая вещь на склад: " + storagableThing.getName());
