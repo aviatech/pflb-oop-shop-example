@@ -1,8 +1,12 @@
-package food;
+package items.food;
 
 import items.Item;
 
 public class Cookie extends Item {
+    public Cookie(String name, int price, int purchasePrice, String taxClass) {
+        super(name, price, purchasePrice, taxClass);
+    }
+
     public Cookie(String name, int purchasePrice) {
         super(name, purchasePrice);
     }
@@ -13,9 +17,16 @@ public class Cookie extends Item {
     }
 
     @Override
+    public String getTaxClass() {
+        return null;
+    }
+
+    @Override
     public void store() {
 
     }
+
+
 
 
 

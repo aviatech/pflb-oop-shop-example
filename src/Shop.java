@@ -1,4 +1,4 @@
-import food.Cookie;
+import items.food.Cookie;
 import items.Battery;
 import items.Item;
 import items.camera.Camera;
@@ -14,23 +14,25 @@ public class Shop {
     private static long balance;
 
     public static void main(String[] args) {
-        Camera camera = new Camera("Canon D3", 100, 100, 1000, 800);
+        Camera camera = new Camera("Canon D3", 100, 100, 1000, 800,"1");
         sell(camera);
 
-        Battery battery = new Battery("Дюрасел ААА", 50, 10);
+        Battery battery = new Battery("Дюрасел ААА", 50, 10, "2");
         sell(battery);
-        printBalance();
+
 
         Table table = new Table("red");
 
-        Cookie cookie = new Cookie("Oreo", 50);
+        Cookie cookie = new Cookie("Oreo", 40);
 
         add(camera);
         add(battery);
         add(table);
-        add(cookie);
 
-        buyToStorage(cookie);
+        getPurchase(cookie);
+        printBalance();
+        buyToStorage(camera);
+
     }
 
     public static void add(Storable storableThing) {
@@ -50,16 +52,15 @@ public class Shop {
         camera.makePhoto();
     }
 
-
     public static void getPurchase(Item item) {
         balance -= item.getPurchasePrice();
     }
 
+    public static void buyToStorage(Item item) {
+         getPurchase(item);
+         add(item);
+     }
 
-    public static void buyToStorage(Item cookie) {
-        getPurchase(cookie);
-        add(cookie);
-    }
 
     public static void printBalance() {
         System.out.println("Our balance is " + balance);

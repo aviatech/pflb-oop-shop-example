@@ -5,8 +5,8 @@ package items.camera;
  */
 public class Palaroid extends Camera {
 
-    Palaroid(String name, int width, int height, int price, int byingPrice) {
-        super(name, width, height, price, byingPrice);
+    public Palaroid(String name, int width, int height, int price, int byingPrice, String taxClass) {
+        super(name, width, height, price, byingPrice, taxClass);
     }
 
     @Override

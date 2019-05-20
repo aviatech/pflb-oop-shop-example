@@ -11,8 +11,8 @@ public class Camera extends Item {
     private int width;
     private int height;
 
-    public Camera(String name, int width, int height, int price, int byingPrice) {
-        super(name, price, byingPrice);
+    public Camera(String name, int width, int height, int price, int byingPrice, String taxClass) {
+        super(name, price, byingPrice, taxClass);
         this.width = width;
         this.height = height;
     }
@@ -29,13 +29,17 @@ public class Camera extends Item {
         this.status = status;
     }
 
+
     @Override
-    public int getTaxes() {
-        return 10;
+    public String getTaxClass() {
+        return "1";
     }
+
 
     @Override
     public void store() {
         System.out.println("Храни меня аккуратно!");
     }
+
+
 }
