@@ -1,6 +1,10 @@
 package items.camera;
 
+import items.Battery;
 import items.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Обычная камера
@@ -8,6 +12,7 @@ import items.Item;
 public class Camera extends Item<Camera> {
 
     private CameraStatus status = CameraStatus.WORKING;
+    List<Battery> batteries = new ArrayList<>();
     private int width;
     private int height;
 
@@ -32,6 +37,14 @@ public class Camera extends Item<Camera> {
     @Override
     public int getTaxes() {
         return 10;
+    }
+
+    public List<Battery> getBatteries() {
+        return batteries;
+    }
+
+    public void addBattery(Battery battery) {
+        batteries.add(battery);
     }
 
     @Override
