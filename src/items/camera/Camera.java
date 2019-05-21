@@ -5,7 +5,7 @@ import items.Item;
 /**
  * Обычная камера
  */
-public class Camera extends Item {
+public class Camera extends Item<Camera> {
 
     private CameraStatus status = CameraStatus.WORKING;
     private int width;
@@ -35,7 +35,8 @@ public class Camera extends Item {
     }
 
     @Override
-    public void storage() {
+    public Camera storage() {
         System.out.println("Храни меня аккуратно!");
+        return this;
     }
 }

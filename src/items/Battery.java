@@ -3,7 +3,7 @@ package items;
 /**
  * Батарейка
  */
-public class Battery extends Item {
+public class Battery extends Item<Battery> {
 
     public Battery(String name, int price, int byingPrice) {
         super(name, price, byingPrice);
@@ -15,7 +15,8 @@ public class Battery extends Item {
     }
 
     @Override
-    public void storage() {
+    public Battery storage() {
         System.out.println("Я хранюсь пачками");
+        return this;
     }
 }
