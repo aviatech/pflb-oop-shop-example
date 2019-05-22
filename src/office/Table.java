@@ -5,7 +5,7 @@ import store.Storagable;
 /**
  * Просто стол из офиса
  */
-public class Table implements Storagable {
+public class Table implements Storagable<Table> {
 
     String color;
 
@@ -21,7 +21,13 @@ public class Table implements Storagable {
     }
 
     @Override
-    public void storage() {
+    public Table storage() {
         System.out.println("Я кладусь только ножками вверх.");
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Стол";
     }
 }

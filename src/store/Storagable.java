@@ -1,9 +1,9 @@
 package store;
 
-public interface Storagable {
+public interface Storagable<T> {
 
     String getName();
 
-    void storage();
+    T storage();
 
 }

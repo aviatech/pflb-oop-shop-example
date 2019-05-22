@@ -5,7 +5,7 @@ import store.Storagable;
 /**
  * Абстрактный продающийся продукт
  */
-public abstract class Item implements Storagable {
+public abstract class Item<T> implements Storagable<T> {
 
     private int price; // цена продажи
     private int purchasePrice; // цена покупки
@@ -34,5 +34,10 @@ public abstract class Item implements Storagable {
     }
 
     public abstract int getTaxes();
+
+    @Override
+    public String toString() {
+        return "Товар " + getName();
+    }
 
 }

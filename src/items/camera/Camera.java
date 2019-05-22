@@ -1,13 +1,18 @@
 package items.camera;
 
+import items.Battery;
 import items.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Обычная камера
  */
-public class Camera extends Item {
+public class Camera extends Item<Camera> {
 
     private CameraStatus status = CameraStatus.WORKING;
+    List<Battery> batteries = new ArrayList<>();
     private int width;
     private int height;
 
@@ -34,8 +39,17 @@ public class Camera extends Item {
         return 10;
     }
 
+    public List<Battery> getBatteries() {
+        return batteries;
+    }
+
+    public void addBattery(Battery battery) {
+        batteries.add(battery);
+    }
+
     @Override
-    public void storage() {
+    public Camera storage() {
         System.out.println("Храни меня аккуратно!");
+        return this;
     }
 }
